@@ -1,0 +1,9 @@
+//vue入口配置项
+//默认是vue有默认项，如果自己非要配置的话，新增vue.config.js去修改入口
+module.exports={
+    pages:{
+        index:{
+            entry:'src/main.js',
+        },
+    },
+}
