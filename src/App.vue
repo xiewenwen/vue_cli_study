@@ -2,6 +2,9 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <!-- school标签下和student标签下 都用.demo的样式，定义了不同的背景色 
+          那个标签先引用 就会被覆盖，所以要在对应组件的<style scoped>,各自独立不会被覆盖
+     -->
         <School ref="school"></School>
         <Student></Student>
         <h2 v-text="msg" ref="title" id='title'></h2><button @click="show" ref="btn">show</button>
