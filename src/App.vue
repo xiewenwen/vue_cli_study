@@ -7,6 +7,8 @@
         <h2 v-text="msg" ref="title" id='title'></h2><button @click="show" ref="btn">show</button>
         <!-- :age的意思是后面的是 按照表达式运算 -->
         <StuProps name="stone" gender="men" :age="20+1"/>
+
+        <StuMixin></StuMixin>
   </div>
 </template>
 
@@ -15,6 +17,7 @@
 import School from './components/School'
 import Student from './components/Student'
 import StuProps from './components/StuProps'
+import StuMixin from './components/StuMixin'
 
 export default {
   name: 'App',
@@ -22,7 +25,8 @@ export default {
     // HelloWorld
       School,
       Student,
-      StuProps
+      StuProps,
+      StuMixin
       
   },
   data(){
