@@ -17,8 +17,8 @@
     }
     }
 </script>
-<style>
+<style scoped>
  .demo{
-     background-color: brown;
+     background-color:pink;
  }
 </style>
