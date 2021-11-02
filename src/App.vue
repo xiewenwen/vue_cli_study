@@ -12,6 +12,10 @@
         <StuProps name="stone" gender="men" :age="20+1"/>
 
         <StuMixin></StuMixin>
+        <!-- header下接收的是函数，在hander内调用函数 增加数组项 -->
+        <MyHeader :addtodo='addtodo'></MyHeader>
+
+        <List :todos="todos"/>
   </div>
 </template>
 
@@ -21,6 +25,8 @@ import School from './components/School'
 import Student from './components/Student'
 import StuProps from './components/StuProps'
 import StuMixin from './components/StuMixin'
+import MyHeader from './todocase/MyHeader.vue'
+import List from './todocase/List.vue'
 
 export default {
   name: 'App',
@@ -29,12 +35,17 @@ export default {
       School,
       Student,
       StuProps,
-      StuMixin
+      StuMixin,
+      MyHeader,
+      List
       
   },
   data(){
     return {
-      msg:'hello'
+      msg:'hello',
+      todos:[{'id':'001','title':'eat','done':true},
+            {'id':'002','title':'sleep','done':true},
+            {'id':'003','title':'drink','done':false}]
     }
   },
   methods:{
@@ -47,6 +58,9 @@ export default {
       console.log(this.$refs.title);
       //组件也可获取，获取组件，获取的是组件vc实例
       console.log(this.$refs.school);      
+    },
+    addtodo(obj){
+      this.todos.unshift(obj);
     }
   }
 }
