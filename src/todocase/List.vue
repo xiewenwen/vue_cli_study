@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <Item v-for="i in todos" :key="i.id" :todo='i'></Item> 
+        <Item v-for="i in todos" :key="i.id" :todo='i' :checkTodo="checkTodo"></Item> 
         
     </ul> 
 </template>
@@ -17,7 +17,7 @@ export default {
     //         {'id':'003','title':'drink','done':false}]
     //     }
     // },
-    props:['todos'],
+    props:['todos','checkTodo'],
     methods:{
 
     }

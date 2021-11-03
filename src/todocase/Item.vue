@@ -1,6 +1,6 @@
 <template>
 <li>
-    <label><input type="checkbox" :checked="todo.done"/>{{todo.title}}</label>
+    <label><input ref="todocheck" type="checkbox" :checked="todo.done" @click="handleChenck(todo.id)"/>{{todo.title}}</label>
     <button>delete</button>
 </li>
 
@@ -10,12 +10,18 @@
 export default {
     name:'Item',
     //接收list下的对象
-    props:['todo'],
+    props:['todo','checkTodo'],
     methods:{
-        deltodo(){
-            
+        // deltodo(){
+
+        // }
+        handleChenck(id){
+            console.log(id);
+            console.log(todo.done);     
+            this.checkTodo(id);       
         }
     }
+    
 
 }
 </script>

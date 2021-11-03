@@ -15,7 +15,8 @@
         <!-- header下接收的是函数，在hander内调用函数 增加数组项 -->
         <MyHeader :addtodo='addtodo'></MyHeader>
 
-        <List :todos="todos"/>
+        <List :todos="todos" :checkTodo="checkTodo"/>
+        <MyFooter :todos="todos"/>
   </div>
 </template>
 
@@ -27,6 +28,8 @@ import StuProps from './components/StuProps'
 import StuMixin from './components/StuMixin'
 import MyHeader from './todocase/MyHeader.vue'
 import List from './todocase/List.vue'
+import MyFooter from './todocase/MyFooter.vue'
+
 
 export default {
   name: 'App',
@@ -37,7 +40,8 @@ export default {
       StuProps,
       StuMixin,
       MyHeader,
-      List
+      List,
+      MyFooter
       
   },
   data(){
@@ -61,6 +65,11 @@ export default {
     },
     addtodo(obj){
       this.todos.unshift(obj);
+    },
+    checkTodo(id){
+      this.todos.forEach((todo)=>{
+        if(todo.id===id) todo.done=!todo.done
+      })
     }
   }
 }
