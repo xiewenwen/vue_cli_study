@@ -16,8 +16,8 @@ export default {
 
         // }
         handleChenck(id){
-            console.log(id);
-            console.log(todo.done);     
+            // console.log(id);
+            // console.log(todo.done);     
             this.checkTodo(id);       
         }
     }

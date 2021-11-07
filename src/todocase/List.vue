@@ -17,10 +17,7 @@ export default {
     //         {'id':'003','title':'drink','done':false}]
     //     }
     // },
-    props:['todos','checkTodo'],
-    methods:{
-
-    }
+    props:['todos','checkTodo']
 
 }
 </script>
