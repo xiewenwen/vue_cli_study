@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>local</title>
+    </head>
+    <body>
+        <button onclick="savedata()">click me to save </button>
+        <button onclick="showdata()">click me to show</button>
+        <button onclick="deldata()">click me to del</button>
+        <button onclick="cleanall()">click me to clear</button>
+        <script>
+            //localStorage存在本地硬盘中，需要api删除或者是在浏览器中手动清除
+            let p={name:'ashin',age:18}
+            function savedata(){
+                localStorage.setItem('msg','hello')
+                localStorage.setItem('name','ashin')
+                localStorage.setItem('person',JSON.stringify(p))
+            }
+            function showdata(){
+                const p=localStorage.getItem('person')
+                console.log(localStorage.getItem('name'))
+                console.log(localStorage.getItem('msg'))
+                console.log(JSON.parse(p))
+            }
+            function deldata(){
+                localStorage.removeItem('name')
+
+            }
+            //清除全部
+            function cleanall(){
+                localStorage.clear();
+            }
+
+        </script>
+
+    </body>
+</html>

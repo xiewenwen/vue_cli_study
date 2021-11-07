@@ -1,6 +1,6 @@
 <template>
 <div>
-    <input type="checkbox" :checked="dsum===todos.length" /><span>已完成{{dsum}}/全部{{todos.length}}</span>
+    <input type="checkbox" :checked="dsum===todos.length&&dsum>0" /><span>已完成{{dsum}}/全部{{todos.length}}</span>
 </div>
   
 </template>

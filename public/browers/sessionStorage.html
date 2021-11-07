@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>local</title>
+    </head>
+    <body>
+        <button onclick="savedata()">click me to save </button>
+        <button onclick="showdata()">click me to show</button>
+        <button onclick="deldata()">click me to del</button>
+        <button onclick="cleanall()">click me to clear</button>
+        <script>
+            //sessionStorage的存储内容会随着浏览器窗口关闭而消失
+            let p={name:'ashin',age:18}
+            function savedata(){
+                sessionStorage.setItem('msg','hello')
+                sessionStorage.setItem('name','ashin')
+                sessionStorage.setItem('person',JSON.stringify(p))
+            }
+            function showdata(){
+                const p=sessionStorage.getItem('person')
+                console.log(sessionStorage.getItem('name'))
+                console.log(sessionStorage.getItem('msg'))
+                console.log(JSON.parse(p))
+            }
+            function deldata(){
+                sessionStorage.removeItem('name')
+
+            }
+            //清除全部
+            function cleanall(){
+                sessionStorage.clear();
+            }
+
+        </script>
+
+    </body>
+</html>
