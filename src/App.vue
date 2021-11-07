@@ -47,9 +47,12 @@ export default {
   data(){
     return {
       msg:'hello',
-      todos:[{'id':'001','title':'eat','done':true},
-            {'id':'002','title':'sleep','done':true},
-            {'id':'003','title':'drink','done':false}]
+      // todos:[{'id':'001','title':'eat','done':true},
+      //       {'id':'002','title':'sleep','done':true},
+      //       {'id':'003','title':'drink','done':false}]
+      //初始化的时候的从缓存中读取todos,但是注意 在一开始没有缓存写入进去，读取为空的时候，会报错
+      //所以加上个空数组判断，没有读取也不会报错
+      todos:JSON.parse(localStorage.getItem('todos'))||[]
     }
   },
   methods:{
@@ -70,6 +73,19 @@ export default {
       this.todos.forEach((todo)=>{
         if(todo.id===id) todo.done=!todo.done
       })
+    }
+  },
+  watch:{
+
+    // todos(value){
+    //   localStorage.setItem('todos',JSON.stringify(value))
+    // }
+    todos:{
+      //开启深度检测，报错done的检测，所以之前的简写模式不能用了 要完整写法
+      deep:true,
+      handler(value){
+        localStorage.setItem('todos',JSON.stringify(value))
+      }
     }
   }
 }
