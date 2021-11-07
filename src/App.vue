@@ -17,6 +17,8 @@
 
         <List :todos="todos" :checkTodo="checkTodo"/>
         <MyFooter :todos="todos"/>
+        <!-- 绑定组件的自定义事件 -->
+        <StuEvent v-on:testeve="getstuname"></StuEvent>
   </div>
 </template>
 
@@ -29,6 +31,7 @@ import StuMixin from './components/StuMixin'
 import MyHeader from './todocase/MyHeader.vue'
 import List from './todocase/List.vue'
 import MyFooter from './todocase/MyFooter.vue'
+import StuEvent from './vueevents/StuEvent.vue'
 
 
 export default {
@@ -41,7 +44,8 @@ export default {
       StuMixin,
       MyHeader,
       List,
-      MyFooter
+      MyFooter,
+      StuEvent
       
   },
   data(){
@@ -73,6 +77,9 @@ export default {
       this.todos.forEach((todo)=>{
         if(todo.id===id) todo.done=!todo.done
       })
+    },
+    getstuname(name){
+      console.log('app收到的了name'+name)
     }
   },
   watch:{
