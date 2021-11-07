@@ -17,6 +17,14 @@ export default {
                 if(todo.done) i++
             })
             return i
+        },
+        dsum2(){
+            //最后一次调用的返回值就是reduce的值
+            const x=this.todos.reduce((pre,current)=>{
+                //返回值作为为下的的pre值
+                return pre+(current.done?1:0)                
+            },0)
+            return x;
         }
     }
     
