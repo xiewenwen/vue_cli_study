@@ -18,7 +18,9 @@
         <List :todos="todos" :checkTodo="checkTodo"/>
         <MyFooter :todos="todos"/>
         <!-- 绑定组件的自定义事件 -->
-        <StuEvent v-on:testeve="getstuname"></StuEvent>
+        <StuEvent v-on:testeve="getstuname" v-on:mytest="testvue"></StuEvent>
+        <SchoolEvent :todos="todos" :testvue2="testvue2"></SchoolEvent>
+        
   </div>
 </template>
 
@@ -32,6 +34,7 @@ import MyHeader from './todocase/MyHeader.vue'
 import List from './todocase/List.vue'
 import MyFooter from './todocase/MyFooter.vue'
 import StuEvent from './vueevents/StuEvent.vue'
+import SchoolEvent from './vueevents/SchoolEvent.vue'
 
 
 export default {
@@ -45,7 +48,9 @@ export default {
       MyHeader,
       List,
       MyFooter,
-      StuEvent
+      StuEvent,
+      SchoolEvent
+
       
   },
   data(){
@@ -80,7 +85,13 @@ export default {
     },
     getstuname(name){
       console.log('app收到的了name'+name)
-    }
+    },
+    testvue(name){
+      console.log('测试名称'+name)
+    },
+    testvue2(name){
+      console.log('测试名称'+name)
+    },
   },
   watch:{
 

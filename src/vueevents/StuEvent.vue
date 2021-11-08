@@ -7,6 +7,9 @@
         <button @click="sendstuname">send stuname</button>
         <button @click="unbind">解绑组件事件</button>
         <button @click="death">销毁stu这个组件</button>
+        <button @click="testvue">test my Vue</button>
+        <button @click="offtestvue">销毁自定义vue事件</button>
+        
 
         
     </div>
@@ -34,6 +37,13 @@
         death(){
             //销毁这个vc的实例组件 所有的自定义事件都会消失
             this.$destroy()
+        },
+        testvue(){
+            //这边绑定事件对应的是app组件下v-on:mytest="xxxx",v-on后面的名字，而不是传递过来的方法
+            this.$emit('mytest',this.home)
+        },
+        offtestvue(){
+            this.$off('mytest')
         }
     }
     }
