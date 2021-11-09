@@ -9,6 +9,7 @@
         <button @click="death">销毁stu这个组件</button>
         <button @click="testvue">test my Vue</button>
         <button @click="offtestvue">销毁自定义vue事件</button>
+        <button @click="showhi">showhi</button>
         
 
         
@@ -44,7 +45,14 @@
         },
         offtestvue(){
             this.$off('mytest')
+        },
+        //当触发该方法的时候 去找原型上的已经绑定好的自定义事件，饭后emit触发，并且传递参数
+        //这个时候school组件下会触发并且收到参数
+        showhi(){
+            console.log('coming')
+            this.$bus.$emit('hello',33333)
         }
+        
     }
     }
 </script>

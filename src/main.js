@@ -15,6 +15,15 @@ Vue.config.productionTip = false
 //也可以带参数
 Vue.use(plugins,12,13);
 
+// const Demo=Vue.extend({})
+// const d=new Demo()
+
+// Vue.prototype.x=d
+
 new Vue({
   render: h => h(App),
+  // 安装全局事件总线 在vm创建前
+  beforeCreate(){
+    Vue.prototype.$bus=this
+  },
 }).$mount('#app')
