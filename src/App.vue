@@ -20,6 +20,8 @@
         <!-- 绑定组件的自定义事件 -->
         <StuEvent v-on:testeve="getstuname" v-on:mytest="testvue"></StuEvent>
         <SchoolEvent :todos="todos" :testvue2="testvue2"></SchoolEvent>
+        <Schpub/>
+        <Stupub/>
         
   </div>
 </template>
@@ -35,6 +37,8 @@ import List from './todocase/List.vue'
 import MyFooter from './todocase/MyFooter.vue'
 import StuEvent from './vueevents/StuEvent.vue'
 import SchoolEvent from './vueevents/SchoolEvent.vue'
+import Schpub from './vuepubsub/Schpub.vue'
+import Stupub from './vuepubsub/Stupub.vue'
 
 
 export default {
@@ -49,7 +53,9 @@ export default {
       List,
       MyFooter,
       StuEvent,
-      SchoolEvent
+      SchoolEvent,
+      Schpub,
+      Stupub
 
       
   },
