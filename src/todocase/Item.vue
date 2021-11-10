@@ -16,9 +16,10 @@ export default {
 
         // }
         handleChenck(id){
-            // console.log(id);
-            // console.log(todo.done);     
-            this.checkTodo(id);       
+            this.checkTodo(id)
+            //谁处理 谁调用自定义事件
+            //需要提供item具体的id 进行勾选的操作
+            // this.$bus.$emit('checkTodo',id)      
         }
     }
     

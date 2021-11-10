@@ -106,6 +106,12 @@ export default {
       }
     }
   }
+  // ,
+  // mounted(){
+  //   //谁接收参数 谁需要绑定事件 app组件下有总数据todos  需要收来自item组件下的id勾选中操作 所有需要接收该组件的id
+  //   //把函数绑定到自定义事件上去
+  //   this.$bus.$on('checkTodo',this.checkTodo)
+  // }
 }
 </script>
 
