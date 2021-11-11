@@ -16,10 +16,15 @@ import pubsub from 'pubsub-js'
     }, 
     mounted(){
         //订阅消息 当有消息发布的时候会接受到
-        pubsub.subscribe('hihi',function () {
+        //每个订阅都会有个id，销毁时候找id
+       this.pubid= pubsub.subscribe('hihi',function () {
             console.log('i get it')
             
         })
+    },
+    beforeDestroy(){
+        //销毁订阅
+        pubsub.unsubscribe(this.pubid)
     }
     }
 </script>
