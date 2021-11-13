@@ -1,61 +1,57 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <!-- school标签下和student标签下 都用.demo的样式，定义了不同的背景色 
-          那个标签先引用 就会被覆盖，所以要在对应组件的<style scoped>,各自独立不会被覆盖
-     -->
-        <School ref="school"></School>
+        <!-- <School ref="school"></School>
         <Student></Student>
-        <h2 v-text="msg" ref="title" id='title'></h2><button @click="show" ref="btn">show</button>
+        <h2 v-text="msg" ref="title" id='title'></h2><button @click="show" ref="btn">show</button> -->
         <!-- :age的意思是后面的是 按照表达式运算 -->
-        <StuProps name="stone" gender="men" :age="20+1"/>
+        <!-- <StuProps name="stone" gender="men" :age="20+1"/>
 
-        <StuMixin></StuMixin>
+        <StuMixin></StuMixin> -->
         <!-- header下接收的是函数，在hander内调用函数 增加数组项 -->
-        <MyHeader :addtodo='addtodo'></MyHeader>
+        <!-- <MyHeader :addtodo='addtodo'></MyHeader>
 
         <List :todos="todos" :checkTodo="checkTodo"/>
-        <MyFooter :todos="todos"/>
+        <MyFooter :todos="todos"/> -->
         <!-- 绑定组件的自定义事件 -->
-        <StuEvent v-on:testeve="getstuname" v-on:mytest="testvue"></StuEvent>
+        <!-- <StuEvent v-on:testeve="getstuname" v-on:mytest="testvue"></StuEvent>
         <SchoolEvent :todos="todos" :testvue2="testvue2"></SchoolEvent>
         <Schpub/>
-        <Stupub/>
+        <Stupub/> -->
+        <button @click="getinfo">获取info</button>
         
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import School from './components/School'
-import Student from './components/Student'
-import StuProps from './components/StuProps'
-import StuMixin from './components/StuMixin'
-import MyHeader from './todocase/MyHeader.vue'
-import List from './todocase/List.vue'
-import MyFooter from './todocase/MyFooter.vue'
-import StuEvent from './vueevents/StuEvent.vue'
-import SchoolEvent from './vueevents/SchoolEvent.vue'
-import Schpub from './vuepubsub/Schpub.vue'
-import Stupub from './vuepubsub/Stupub.vue'
+
+// import School from './components/School'
+// import Student from './components/Student'
+// import StuProps from './components/StuProps'
+// import StuMixin from './components/StuMixin'
+// import MyHeader from './todocase/MyHeader.vue'
+// import List from './todocase/List.vue'
+// import MyFooter from './todocase/MyFooter.vue'
+// import StuEvent from './vueevents/StuEvent.vue'
+// import SchoolEvent from './vueevents/SchoolEvent.vue'
+// import Schpub from './vuepubsub/Schpub.vue'
+// import Stupub from './vuepubsub/Stupub.vue'
+import axios from 'axios'
 
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
-      School,
-      Student,
-      StuProps,
-      StuMixin,
-      MyHeader,
-      List,
-      MyFooter,
-      StuEvent,
-      SchoolEvent,
-      Schpub,
-      Stupub
+      // School,
+      // Student,
+      // StuProps,
+      // StuMixin,
+      // MyHeader,
+      // List,
+      // MyFooter,
+      // StuEvent,
+      // SchoolEvent,
+      // Schpub,
+      // Stupub
 
       
   },
@@ -98,6 +94,18 @@ export default {
     testvue2(name){
       console.log('测试名称'+name)
     },
+    getinfo(){
+      console.log('发送请求')
+      //本来原来的服务器地址是8080端口的，因为设置的代理所以请本地前端口8081（前端的端口） 自动转发给了8080端口
+      axios.get('http://localhost:8081/user/testRestful').then(
+        response=>{
+          console.log( 'success',response.data)
+          },
+        error=>{
+          console.log('fail',error.data)
+          }
+      )
+    }
   },
   watch:{
 

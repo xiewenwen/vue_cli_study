@@ -6,4 +6,9 @@ module.exports={
             entry:'src/main.js',
         },
     },
+    //开启代理服务器
+    devServer:{
+        //这边配置代理的是你需要后端请求的服务器地址
+        proxy:'http://localhost:8080/'
+    }
 }
