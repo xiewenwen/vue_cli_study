@@ -18,6 +18,8 @@
         <Schpub/>
         <Stupub/> -->
         <button @click="getinfo">获取info</button>
+        <Search></Search>
+        <UserList></UserList>
         
   </div>
 </template>
@@ -36,6 +38,8 @@
 // import Schpub from './vuepubsub/Schpub.vue'
 // import Stupub from './vuepubsub/Stupub.vue'
 import axios from 'axios'
+import Search from './searchuser/Search.vue'
+import UserList from './searchuser/UserList.vue'
 
 
 export default {
@@ -51,7 +55,10 @@ export default {
       // StuEvent,
       // SchoolEvent,
       // Schpub,
-      // Stupub
+      // Stupub,
+      Search,
+      UserList
+      
 
       
   },
