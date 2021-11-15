@@ -1,9 +1,9 @@
 <template>
   <div>
       <ul>
-          <li><img/></li>
+          <li v-for="user in users" :key="user.login"><img :src="user.avatar_url"/></li>
       </ul>
-      <button @click="getinfo">get</button>
+      
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     name:'UserList',
     data(){
         return{
-            users:[1,2,3,4]||[],
+            users:[],
             my:[]
         }        
     },
@@ -28,9 +28,9 @@ export default {
     },
     mounted(){
         pubsub.subscribe('users',(name,value)=>{
-            this.my=value;
+            this.users=value;
             console.log('mymymy'+this.my)
-            console.log('我收到了'+JSON.stringify(value))
+            // console.log('我收到了'+JSON.stringify(value))
         })
     }
     

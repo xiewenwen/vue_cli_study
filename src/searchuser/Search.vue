@@ -16,7 +16,7 @@ export default {
   name: "Search",
   data() {
     return {
-      word:"ashin"
+      word:""
     }
   },
   methods: {
