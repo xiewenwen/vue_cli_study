@@ -7,7 +7,6 @@ import plugins from './plugins'
 
 import vueResource from 'vue-resource'
 
-import Vuex from 'vuex'
 
 import store from './store'
 

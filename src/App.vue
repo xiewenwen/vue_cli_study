@@ -20,6 +20,7 @@
         <button @click="getinfo">获取info</button>
         <Search></Search>
         <UserList></UserList>
+        <Count></Count>
         
   </div>
 </template>
@@ -40,6 +41,7 @@
 import axios from 'axios'
 import Search from './searchuser/Search.vue'
 import UserList from './searchuser/UserList.vue'
+import Count from './count/Count.vue'
 
 
 export default {
@@ -57,7 +59,9 @@ export default {
       // Schpub,
       // Stupub,
       Search,
-      UserList
+      UserList,
+      Count
+
       
 
       
