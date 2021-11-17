@@ -18,8 +18,19 @@ const actions={
         //提交给mutations
         console.log('调用jian')
         context.commit('JIAN',value)
-    }
+    },
     //在这边处理业务逻辑，不要放在mutations下处理
+    jiaodd(context,value){
+        if(context.state.sum%2){
+            context.commit('JIAODD',value)
+        }      
+    },
+    jiawait(context,value){
+        setInterval(() => {
+            context.commit('JIAWAIT',value)
+        }, 500)
+       
+    }
     
 }
 
@@ -31,7 +42,14 @@ const mutations={
     },
     JIAN(state,value){
         state.sum-=value
+    },
+    JIAODD(state,value){
+        state.sum+=value
+    },
+    JIAWAIT(state,value){
+        state.sum+=value
     }
+
 }
 
 //用于存储数据 准备state

@@ -39,12 +39,11 @@ export default {
             // if(this.sum%2){
             //     this.sum+=this.n
             // }
+            this.$store.dispatch('jiaodd',this.n)
 
         },
         incrementwait(){
-            setInterval(() => {
-                // this.sum+=this.n
-            }, 500);
+            this.$store.dispatch('jiawait',this.n)
 
         }
 
