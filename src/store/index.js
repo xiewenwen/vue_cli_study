@@ -54,13 +54,24 @@ const mutations={
 
 //用于存储数据 准备state
 const state={
-    sum:0
+    sum:0,
+    band:'mayday',
+    name:'ashin'
 }
+//类似vue中的计算属性，统一处理state中的值
+const getters={
+    bigsum(state){
+        //需要返回值
+        return state.sum*10
+    }
+}
+
 
 const store=new Vuex.Store({
     actions:actions,
     mutations:mutations,
-    state:state
+    state:state,
+    getters:getters
 })
 //暴露store
 export default store
