@@ -3,6 +3,7 @@
       <h1>the num is:{{$store.state.sum}}</h1>
       <h1>the num *10 is: {{$store.getters.bigsum}}
       </h1>
+      <h2><span class="colo">person的总人数是：{{persons.length}}</span></h2>
       <h2>{{$store.state.band}},{{$store.state.name}}</h2>
       <h2>{{band}},{{name}}</h2>
       <select v-model="n">
@@ -19,7 +20,7 @@
 
 <script>
 //引入生成函数方法
-import { mapGetters, mapMutations, mapState } from "vuex"
+import { mapGetters, mapState } from "vuex"
 
 export default {
     name:'Count',
@@ -67,7 +68,7 @@ export default {
         //     return this.$store.state.name
         // },
         //等同于上面的函数，es6语法，结构赋值，拆开每个对象作为一个属性(对象写法)
-        ...mapState({band:'band',name:'name'}),
+        ...mapState({band:'band',name:'name',persons:'persons'}),
         //数组写法，生成名和读取名一致才可以用这种
         // ...mapState(['band','name'])
 
@@ -80,5 +81,8 @@ export default {
 </script>
 
 <style lang="css">
+.colo{
+    background-color: blue;
+}
 
 </style>

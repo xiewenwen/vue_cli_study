@@ -21,6 +21,7 @@
         <Search></Search>
         <UserList></UserList>
         <Count></Count>
+        <Person></Person>
         
   </div>
 </template>
@@ -42,6 +43,7 @@ import axios from 'axios'
 import Search from './searchuser/Search.vue'
 import UserList from './searchuser/UserList.vue'
 import Count from './count/Count.vue'
+import Person from './count/Persion.vue'
 
 
 export default {
@@ -60,7 +62,8 @@ export default {
       // Stupub,
       Search,
       UserList,
-      Count
+      Count,
+      Person
 
       
 

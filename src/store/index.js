@@ -30,7 +30,14 @@ const actions={
             context.commit('JIAWAIT',value)
         }, 500)
        
+    },
+    ///perison组件方法
+    addp(context,value){
+        const id=Math.random()
+        context.commit('ADDP',{'id':id,'name':value})
+       
     }
+
     
 }
 
@@ -48,6 +55,10 @@ const mutations={
     },
     JIAWAIT(state,value){
         state.sum+=value
+    },
+    ADDP(state,value){
+        console.log('ADDP value is'+value)
+        state.persons.unshift(value)
     }
 
 }
@@ -56,7 +67,8 @@ const mutations={
 const state={
     sum:0,
     band:'mayday',
-    name:'ashin'
+    name:'ashin',
+    persons:[{'id':'001','name':'lili'},{'id':'002','name':'ming'}]
 }
 //类似vue中的计算属性，统一处理state中的值
 const getters={
