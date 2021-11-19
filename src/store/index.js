@@ -37,6 +37,8 @@ const actions={
         context.commit('ADDP',{'id':id,'name':value})
        
     }
+    //test for it zezeze 
+    ///xixix
 
     
 }

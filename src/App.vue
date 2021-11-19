@@ -22,6 +22,16 @@
         <UserList></UserList>
         <Count></Count>
         <Person></Person>
+        <div>
+          <!-- <a href="https://www.baidu.com">About</a><br/>
+          <a href="https://www.baidu.com"> home </a> -->
+          <!-- 路由控制标签 实现路由的跳转 -->
+          <router-link to="/about">About</router-link><br/>
+          <router-link to="/home">Home</router-link>
+          <!-- <div>show content</div> -->
+          <!-- 指定路由的显示页面 -->
+          <router-view></router-view>
+        </div>
         
   </div>
 </template>
