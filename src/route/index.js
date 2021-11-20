@@ -3,6 +3,7 @@ import About from '../route/About'
 import Home from "../route/Home"
 import News from '../route/News'
 import Message from "../route/Message"
+import Detail from "../route/Detail"
 
 const router=new VueRouter({
     routes:[
@@ -21,7 +22,13 @@ const router=new VueRouter({
                 },
                 {
                     path:'message',
-                    component:Message
+                    component:Message,
+                    children:[
+                        {
+                            path:'detail',
+                            component:Detail
+                        }
+                    ]
                 }
             ]
         }
