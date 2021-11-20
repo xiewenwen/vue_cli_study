@@ -1,5 +1,5 @@
 <template>
-    <div><h2>about</h2></div>
+    <div><h2>about组件内容 嘻嘻嘻</h2></div>
 </template>
 <script>
 export default {
