@@ -26,8 +26,10 @@
           <!-- <a href="https://www.baidu.com">About</a><br/>
           <a href="https://www.baidu.com"> home </a> -->
           <!-- 路由控制标签 实现路由的跳转 -->
-          <router-link to="/about">About</router-link><br/>
-          <router-link to="/home">Home</router-link>
+          <!-- replace标签用于控制浏览器的模式 只保留一个 替换的是当前的记录 替换栈顶那个 -->
+          <!-- 浏览器历史记录两种写入方式：push和repalce 路由跳转默认是push（追加） -->
+          <router-link replace to="/about">About</router-link><br/>
+          <router-link replace to="/home">Home</router-link>
           <!-- <div>show content</div> -->
           <!-- 指定路由的显示页面 -->
           <router-view></router-view>
