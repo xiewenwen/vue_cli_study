@@ -10,6 +10,7 @@ const router=new VueRouter({
         {   //一级路由
             path:'/about',
             component:About
+
         },
         {
             path:'/home',
@@ -18,7 +19,13 @@ const router=new VueRouter({
             children:[
                 {
                     path:'news',
-                    component:News
+                    component:News,
+                    children:[
+                        {
+                            path:'detail',
+                            component:Detail
+                        }
+                    ]
                 },
                 {
                     path:'message',
