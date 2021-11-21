@@ -5,12 +5,13 @@
     <li>news3</li> -->
     <li v-for="n in newslist" :key="n.id">
         <router-link :to="{
-            path:'/home/news/detail',
-            query:{id:n.id,name:n.name}
+            //params需要用name实现路由的跳转
+            name:'DetailNews',
+            //传递params参数
+            params:{id:n.id,name:n.name}
         }">
         {{n.name}}
-        </router-link>
-        
+        </router-link>    
     </li>
     <router-view></router-view>
 </ul>
