@@ -34,6 +34,17 @@ export default {
                 {'id':'003','name':'news3','content':'news3'},
                 ]
         }
+    },
+    //新的生命周期钩子 路由特有
+    //在使用路由组件的时候被激活
+    //比如：组件中使用了定时器
+    activated(){
+        console.log('组件被激活')
+
+    },
+    //路由组件切走的时候失效
+    deactivated(){
+        console.log('组件失活了')
     }
 
 }
