@@ -8,7 +8,15 @@ export default {
         return{
             name:''
         }
-    }
+    },
+    // //通过路由规则 进入组件时 被调用
+    // beforeRouteEnter(){
+
+    // },
+    // //通过路由规则 离开组件时 被调用
+    // beforeRouteLeave(){
+
+    // }
 
 }
 </script>
