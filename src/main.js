@@ -14,6 +14,10 @@ import VueRouter from 'vue-router'
 
 //引入route下的 我们配置的路由js文件
 import router from './route/index.js'
+//引入elementui组件库
+import ElementUI from 'element-ui'
+//引入elementui的全局css样式
+import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.config.productionTip = false
 
@@ -22,6 +26,8 @@ Vue.use(vueResource)
 
 //全局加载使用路由
 Vue.use(VueRouter)
+//应用elementui
+Vue.use(ElementUI)
 
 //引入残缺版本的vue，vue.runtime.xxx.js没有模版解析器，所以不能使用template配置项
 //需要使用render函数接收到createElement函数去指定具体内容
