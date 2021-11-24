@@ -17,32 +17,34 @@
         <SchoolEvent :todos="todos" :testvue2="testvue2"></SchoolEvent>
         <Schpub/>
         <Stupub/> -->
-    <button @click="getinfo">获取info</button>
+    <!-- <button @click="getinfo">获取info</button>
     <Search></Search>
     <UserList></UserList>
     <Count></Count>
-    <Person></Person>
-    <div>
+    <Person></Person> -->
+    <!-- <div> -->
       <!-- <a href="https://www.baidu.com">About</a><br/>
           <a href="https://www.baidu.com"> home </a> -->
       <!-- 路由控制标签 实现路由的跳转 -->
       <!-- replace标签用于控制浏览器的模式 只保留一个 替换的是当前的记录 替换栈顶那个 -->
       <!-- 浏览器历史记录两种写入方式：push和repalce 路由跳转默认是push（追加） -->
-      <router-link replace to="/about">About</router-link><br />
-      <router-link replace to="/home">Home</router-link>
+      <!-- <router-link replace to="/about">About</router-link><br />
+      <router-link replace to="/home">Home</router-link> -->
       <!-- <div>show content</div> -->
       <!-- 指定路由的显示页面 -->
-      <router-view></router-view>
-    </div>
+      <!-- <router-view></router-view> -->
+    <!-- </div> -->
 
-    <el-row>
+    <!-- <el-row>
       <el-button>默认按钮</el-button>
       <el-button type="primary">主要按钮</el-button>
       <el-button type="success">成功按钮</el-button>
       <el-button type="info">信息按钮</el-button>
       <el-button type="warning">警告按钮</el-button>
       <el-button type="danger">危险按钮</el-button>
-    </el-row>
+    </el-row> -->
+    <Main></Main>
+    
 
   </div>
 </template>
@@ -60,10 +62,11 @@
 // import Schpub from './vuepubsub/Schpub.vue'
 // import Stupub from './vuepubsub/Stupub.vue'
 import axios from "axios";
-import Search from "./searchuser/Search.vue";
-import UserList from "./searchuser/UserList.vue";
-import Count from "./count/Count.vue";
-import Person from "./count/Persion.vue";
+// import Search from "./searchuser/Search.vue";
+// import UserList from "./searchuser/UserList.vue";
+// import Count from "./count/Count.vue";
+// import Person from "./count/Persion.vue";
+import Main from "./pages/Main.vue"
 
 export default {
   name: "App",
@@ -79,10 +82,11 @@ export default {
     // SchoolEvent,
     // Schpub,
     // Stupub,
-    Search,
-    UserList,
-    Count,
-    Person,
+    // Search,
+    // UserList,
+    // Count,
+    // Person,
+    Main
   },
   data() {
     return {
@@ -162,8 +166,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px; */
 }
 </style>
